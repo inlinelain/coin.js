@@ -59,4 +59,14 @@ class Coin {
     this.rotation += 180 * times;
     this.coin.style.transform = `rotateY(${this.rotation}deg)`;
   }
+
+  getCurrentFace() {
+    // Определяем текущую сторону на основе значения rotation
+    const normalizedRotation = this.rotation % 360;
+    if (normalizedRotation === 0 || normalizedRotation === 360) {
+      return 'front';
+    } else {
+      return 'back';
+    }
+  }
 }
